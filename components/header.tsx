@@ -38,7 +38,7 @@ export function Header() {
             {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
           </Button>
           <a
-            href="https://github.com/yourusername/learning-framer-motion"
+            href="https://github.com/frgryr2001/labs-motion"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm hover:text-primary transition-colors"
