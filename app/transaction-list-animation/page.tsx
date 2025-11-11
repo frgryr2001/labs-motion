@@ -155,11 +155,11 @@ export default function TransactionListAnimationPage() {
               </button>
             </div>
 
-            <div className="w-full" id="transaction-list">
+            <div className="w-full " id="transaction-list">
               <motion.ul
                 animate={{ height: height > 0 ? height : undefined }}
                 transition={{ type: 'spring', bounce: 0, duration: 0.8 }}
-                style={{ overflow: 'hidden', position: 'relative' }}
+                // style={{ overflow: 'hidden', position: 'relative' }}
                 layout
               >
                 <div ref={ref} className="space-y-4">
