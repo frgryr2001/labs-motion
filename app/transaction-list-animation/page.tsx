@@ -5,9 +5,10 @@ import { useCallback, useMemo, useState } from 'react';
 import { nanoid } from 'nanoid';
 import NumberFlow from '@number-flow/react';
 import { driver } from 'driver.js';
-import 'driver.js/dist/driver.css';
+
 import { AnimatePresence, motion } from 'motion/react';
 import useMeasure from 'react-use-measure';
+import { ScrollArea } from '@/components/ui/scroll-area';
 const MotionNumberFlow = motion.create(NumberFlow);
 
 export default function TransactionListAnimationPage() {
@@ -38,89 +39,13 @@ export default function TransactionListAnimationPage() {
     );
   }, [transactions]);
 
-  const startTransactionTour = useCallback(() => {
-    const driverObj = driver({
-      showProgress: true,
-      showButtons: ['next', 'previous', 'close'],
-      steps: [
-        {
-          element: '#balance-section',
-          popover: {
-            title: '💰 Balance Overview',
-            description:
-              'Watch your balance update in real-time with smooth number animations as you add or remove transactions.',
-            side: 'bottom',
-            align: 'center',
-          },
-        },
-        {
-          element: '#balance-amount',
-          popover: {
-            title: '🔢 Animated Balance Counter',
-            description:
-              'This uses @number-flow/react for smooth currency transitions. Notice how it animates when transactions change!',
-            side: 'bottom',
-            align: 'center',
-          },
-        },
-        {
-          element: '#transactions-header',
-          popover: {
-            title: '📋 Transaction Management',
-            description:
-              'Add new transactions with the + button. Each transaction animates in with blur and slide effects.',
-            side: 'bottom',
-            align: 'center',
-          },
-        },
-        {
-          element: '#add-transaction-btn',
-          popover: {
-            title: '➕ Add Transaction',
-            description:
-              'Click here to add a random transaction. Watch the smooth entrance animation with blur effect!',
-            side: 'left',
-            align: 'center',
-          },
-        },
-        {
-          element: '#transaction-list',
-          popover: {
-            title: '✨ Animated Transaction List',
-            description:
-              'This list uses AnimatePresence for smooth enter/exit animations. Click any transaction to remove it and see the exit animation.',
-            side: 'top',
-            align: 'center',
-          },
-        },
-        {
-          popover: {
-            title: '🎉 Tour Complete!',
-            description:
-              "You've learned about transaction animations! Try adding and removing transactions to see all the smooth Framer Motion effects in action.",
-          },
-        },
-      ],
-    });
-
-    driverObj.drive();
-  }, []);
-
   return (
-    <DocsLayout>
-      <div className="p-8">
-        <div className="mb-8">
-          <button
-            onClick={startTransactionTour}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
-          >
-            <Sparkles className="w-4 h-4" />
-            Start Interactive Tour
-          </button>
-        </div>
-        <div className="flex items-center justify-center">
-          <main className="flex  w-full max-w-xl rounded-2xl flex-col items-center shadow-xs py-16 px-16 bg-white dark:bg-zinc-900 sm:items-start gap-10">
-            <div
+    <div className="min-h-screen  w-full flex items-center justify-center p-4 bg-[#EDEDED] ">
+      <div className="flex items-center justify-center">
+        <main className=" overflow-y-auto   rounded-2xl  items-center shadow-xs p-8 bg-white dark:bg-zinc-900 sm:items-start gap-10">
+          <ScrollArea className='h-[80vh] w-2xl px-4 '>
+           <div className='flex flex-col gap-6 '>
+              <div
               className="flex items-center justify-between w-full"
               id="balance-section"
             >
@@ -151,7 +76,7 @@ export default function TransactionListAnimationPage() {
                 Transactions
               </h3>
               <button onClick={addTransaction} id="add-transaction-btn">
-                <Plus className=" h-10 w-10 rounded-xl border border-zinc-200 bg-white p-2  shadow-sm hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700" />
+                <Plus className=" h-10 w-10 rounded-xl border border-zinc-200 bg-white p-2   hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700" />
               </button>
             </div>
 
@@ -183,7 +108,7 @@ export default function TransactionListAnimationPage() {
                           transition: { duration: 0.15 },
                         }}
                         key={transaction.id}
-                        className="bg-[#00000014] p-6 rounded-xl flex justify-between items-center"
+                        className="bg-[#aca8a814] p-6 rounded-xl flex justify-between items-center"
                         transition={{
                           duration: 0.4,
                           type: 'spring',
@@ -211,10 +136,11 @@ export default function TransactionListAnimationPage() {
                 </div>
               </motion.ul>
             </div>
-          </main>
-        </div>
+           </div>
+          </ScrollArea>
+        </main>
       </div>
-    </DocsLayout>
+    </div>
   );
 }
 

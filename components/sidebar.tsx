@@ -11,6 +11,7 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { title: 'Transaction List Animation', href: '/transaction-list-animation' },
+  { title: 'Feedback', href: '/feedback' },
 
 ];
 
@@ -31,7 +32,7 @@ export function Sidebar() {
                 <Link
                   href={item.href}
                   className={cn(
-                    'block px-4 py-2 rounded-md text-sm transition-colors font-sans',
+                    'block px-4 py-2 rounded-md text-sm transition-colors font-sans font-medium',
                     isActive
                       ? 'bg-primary text-primary-foreground'
                       : 'hover:bg-accent hover:text-accent-foreground'
