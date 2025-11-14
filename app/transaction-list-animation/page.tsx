@@ -1,10 +1,10 @@
 'use client';
-import { DocsLayout } from '@/components/docs-layout';
-import { Plus, Sparkles } from 'lucide-react';
-import { useCallback, useMemo, useState } from 'react';
+
+import { Plus } from 'lucide-react';
+import {  useMemo, useState } from 'react';
 import { nanoid } from 'nanoid';
 import NumberFlow from '@number-flow/react';
-import { driver } from 'driver.js';
+
 
 import { AnimatePresence, motion } from 'motion/react';
 import useMeasure from 'react-use-measure';

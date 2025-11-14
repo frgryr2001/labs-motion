@@ -1,28 +1,7 @@
 'use client';
 
-import { Moon, Sun } from 'lucide-react';
-import { useEffect, useState } from 'react';
-import { Button } from '@/components/ui/button';
-
 export function Header() {
-  const [isDark, setIsDark] = useState(true);
 
-  useEffect(() => {
-    // Check initial theme
-    const htmlElement = document.documentElement;
-    setIsDark(htmlElement.classList.contains('dark'));
-  }, []);
-
-  const toggleTheme = () => {
-    const htmlElement = document.documentElement;
-    if (htmlElement.classList.contains('dark')) {
-      htmlElement.classList.remove('dark');
-      setIsDark(false);
-    } else {
-      htmlElement.classList.add('dark');
-      setIsDark(true);
-    }
-  };
 
   return (
     <header className="border-b border-border bg-card">

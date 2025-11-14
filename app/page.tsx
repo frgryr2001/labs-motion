@@ -1,6 +1,6 @@
 'use client';
 import { DocsLayout } from '@/components/docs-layout';
-import Link from 'next/link';
+
 import { Button } from '@/components/ui/button';
 
 export default function HomePage() {
