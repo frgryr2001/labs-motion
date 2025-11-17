@@ -12,7 +12,7 @@ interface NavItem {
 const navItems: NavItem[] = [
   { title: 'Transaction List Animation', href: '/transaction-list-animation' },
   { title: 'Feedback', href: '/feedback' },
-
+  { title: 'Inline Table Control', href: '/inline-table-control' },
 ];
 
 export function Sidebar() {
@@ -20,9 +20,7 @@ export function Sidebar() {
 
   return (
     <aside className="w-64 border-r border-border bg-card h-screen sticky top-0 flex flex-col font-sans">
-      <div className="p-6 border-b border-border">
-        <h2 className="text-lg font-semibold">UI Components</h2>
-      </div>
+
       <nav className="flex-1 overflow-y-auto p-4">
         <ul className="space-y-2">
           {navItems.map((item) => {

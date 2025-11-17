@@ -6,7 +6,7 @@ export function Header() {
   return (
     <header className="border-b border-border bg-card">
       <div className="flex items-center justify-between px-6 py-4">
-        <h1 className="text-xl font-bold">JohnnyUI</h1>
+        <h1 className="text-xl font-bold">Labs</h1>
         <div className="flex items-center gap-4">
           {/* <Button
             variant="ghost"
