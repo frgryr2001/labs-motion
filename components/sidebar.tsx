@@ -13,6 +13,7 @@ const navItems: NavItem[] = [
   { title: 'Transaction List Animation', href: '/transaction-list-animation' },
   { title: 'Feedback', href: '/feedback' },
   { title: 'Inline Table Control', href: '/inline-table-control' },
+  {title : 'Magic Wand', href: '/magic-wand' },
 ];
 
 export function Sidebar() {
