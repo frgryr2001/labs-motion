@@ -4,8 +4,6 @@ import { Plus } from 'lucide-react';
 import {  useMemo, useState } from 'react';
 import { nanoid } from 'nanoid';
 import NumberFlow from '@number-flow/react';
-
-
 import { AnimatePresence, motion } from 'motion/react';
 import useMeasure from 'react-use-measure';
 import { ScrollArea } from '@/components/ui/scroll-area';
