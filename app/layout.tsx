@@ -28,7 +28,6 @@ export default function RootLayout({
       <body
         className={`${ibmSans.variable} ${ibmMono.variable} antialiased`}
       >
-
         {children}
       </body>
     </html>

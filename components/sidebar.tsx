@@ -16,6 +16,7 @@ const navItems: NavItem[] = [
   { title: 'Magic Wand', href: '/magic-wand' },
   { title: 'Calendar', href: '/calendar' },
   { title: 'Carousel', href: '/carousel' },
+  { title: 'Inline Flow', href: '/inline-flow' },
 ];
 
 export function Sidebar() {
