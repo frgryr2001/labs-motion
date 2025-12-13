@@ -8,7 +8,7 @@ interface UploadedFile {
   type: string;
 }
 
-export function useFileUpload() {
+export function useFileUpload(delay : number = 2000) {
   const [state, setState] = useState<UploadState>('idle');
   const [file, setFile] = useState<UploadedFile | null>(null);
   const [isDragging, setIsDragging] = useState(false);
@@ -41,7 +41,7 @@ export function useFileUpload() {
           handleReset();
         }, 2000);
       }
-    }, 2000);
+    }, delay);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -62,6 +62,8 @@ export function useFileUpload() {
     e.stopPropagation();
     setIsDragging(false);
   };
+
+
 
   const handleDrop = (e: React.DragEvent) => {
     e.preventDefault();

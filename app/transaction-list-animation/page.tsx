@@ -6,7 +6,7 @@ import { nanoid } from 'nanoid';
 import NumberFlow from '@number-flow/react';
 import { AnimatePresence, motion } from 'motion/react';
 import useMeasure from 'react-use-measure';
-import { ScrollArea } from '@/components/ui/scroll-area';
+// import { ScrollArea } from '@/components/ui/scroll-area';
 const MotionNumberFlow = motion.create(NumberFlow);
 
 export default function TransactionListAnimationPage() {
@@ -41,7 +41,7 @@ export default function TransactionListAnimationPage() {
     <div className="min-h-screen  w-full flex items-center justify-center p-4 bg-[#EDEDED] ">
       <div className="flex items-center justify-center">
         <main className=" overflow-y-auto   rounded-2xl  items-center shadow-xs p-8 bg-white dark:bg-zinc-900 sm:items-start gap-10">
-          <ScrollArea className='h-[80vh] w-2xl px-4 '>
+          <div className='h-[80vh] w-2xl px-4 overflow-y-auto'>
            <div className='flex flex-col gap-6 '>
               <div
               className="flex items-center justify-between w-full"
@@ -135,7 +135,7 @@ export default function TransactionListAnimationPage() {
               </motion.ul>
             </div>
            </div>
-          </ScrollArea>
+          </div>
         </main>
       </div>
     </div>

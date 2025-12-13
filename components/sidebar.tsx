@@ -17,6 +17,7 @@ const navItems: NavItem[] = [
   { title: 'Calendar', href: '/calendar' },
   { title: 'Carousel', href: '/carousel' },
   { title: 'Inline Flow', href: '/inline-flow' },
+    { title: 'File Upload', href: '/file-upload' },
 ];
 
 export function Sidebar() {
